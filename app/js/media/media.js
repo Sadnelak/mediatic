@@ -1,16 +1,16 @@
 angular.module('media',[]);
 
 angular.module('media').config(function($routeProvider){
-	$routeProvider.when('/creationMedia'){
+	$routeProvider.when('/creationMedia',{
 		controller:('CreationMediaController'),
-		templateURL('partials/creationMedia.html')
-	};
-	$routeProvider.when('/rechercheMedia'){
+		templateURL:('partials/creationMedia.html')
+	});
+	$routeProvider.when('/rechercheMedia',{
 		controller:('RechercheMediaController'),
-		templateURL('partials/rechercheMedia.html')
-	};
-	$routeProvider.when('/visualisationMedia'){
+		templateURL:('partials/rechercheMedia.html')
+	});
+	$routeProvider.when('/visualisationMedia',{
 		controller:('VisualisationMediaController'),
-		templateURL('partials/visualisationMedia.html')
-	};
-)
+		templateURL:('partials/visualisationMedia.html')
+	});
+});
