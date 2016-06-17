@@ -5,11 +5,46 @@
 <script src="bower_components\angular-route\angular-route.js"></script>
 <script src="js/app.js"></script>
 
+<script src="js/adherent/adherent.js"></script>
+<script src="js/adherent/CreationAdherentCtrl.js"></script>
+<script src="js/adherent/RechercheAdherentCtrl.js"></script>
+<script src="js/adherent/VisualisationAdherentCtrl.js"></script>
+
+<script src="js/media/media.js"></script>
+<script src="js/media/CreationMediaCtrl.js"></script>
+<script src="js/media/RechercheMediaCtrl.js"></script>
+<script src="js/media/VisualisationMediaCtrl.js"></script>
 </head>
-<body ng-controller="IndexController">
+<body>
 <nav>
-	
-</nav>
+		<h1> Navigation </h1>
+		<span>
+			<a href="#/login">
+				<span> Se connecter / Deconnecter</span>
+			</a>
+		</span>
+		<span>
+			<a href="#/rechercheAdherent">
+				<span> Liste Adh&eacute;rents</span>
+			</a>
+		</span>
+		<span>
+			<a href="#/creationAdherent">
+				<span> Cr&eacute;ation Adh&eacute;rents</span>
+			</a>
+		</span>
+		<span>
+			<a href="#/rechercheMedia">
+				<span> Liste M&eacute;dia</span>
+			</a>
+		</span>
+		<span>
+			<a href="#/creationMedia">
+				<span> Cr&eacute;ation M&eacute;dia</span>
+			</a>
+		</span>
+		
+	</nav>
 	<ng-view></ng-view>
 </body>
 </html>
