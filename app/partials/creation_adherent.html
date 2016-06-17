@@ -1,1 +1,73 @@
-﻿<h2> Page de création d'un adhérent</h2>
+<h2>Page de création d'un adhérent</h2>
+
+<div>
+	<h3>Instruction</h3>
+	<div>
+		<span>Veuillez renseigner les données à enregistrer sur le
+			serveur</span>
+	</div>
+
+	<div>
+		<span>Si vous n'êtes pas habilité pour cette opération,
+			veuillez vous déconnecter</span>
+	</div>
+
+</div>
+
+<div>
+	<form action="">
+<!-- 	
+Nom et prénom
+Date de naissance
+E-mail
+Adresse, Code postal, Ville
+Date de paiement de la cotisation
+Montant de la cotisation
+
+Les champs suivants sont obligatoires :
+
+Nom et prénom
+Date de naissance
+E-mail
+	 -->
+		<div>
+			<label>Nom du nouvel adhérent</label>
+			<input type="text" ng-bind="adherent.nom">
+		</div>
+		<div>
+			<label>Prénom du nouvel adhérent</label>
+			<input type="text" ng-bind="adherent.prenom">
+		</div>
+		<div>
+			<label>Mail</label>
+			<input type="text" ng-bind="adherent.mail">
+		</div>
+		<div>
+			<label>Date de naissance (format JJ-MM-AAAA)</label>
+			<input type="text" ng-bind="adherent.dateNaissance">
+		</div>
+		<div>
+			<label>Adresse</label>
+			<input type="text" ng-bind="adherent.adresse">
+		</div>
+		<div>
+			<label>Ville</label>
+			<input type="text" ng-bind="adherent.ville">
+		</div>
+		<div>
+			<label>Code Postal</label>
+			<input type="text" ng-bind="adherent.cP">
+		</div>
+		<div>
+			<label>Date de cotisation (format JJ-MM-AAAA)</label>
+			<input type="text" ng-bind="adherent.dateCotisation">
+		</div>
+		<div>
+			<label>Montant de la cotisation</label>
+			<input type="text" ng-bind="adherent.montantCotisation | number:0">
+		</div>
+		<div>
+			<input type="button" value="Ajouter l'adhérent" ng-click="ajoutAdherent()">
+		</div>
+	</form>
+</div>
