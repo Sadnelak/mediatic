@@ -1,4 +1,4 @@
-angular.module('rechercheMedia').controller('RechercheMediaController', 
+angular.module('media').controller('RechercheMediaController', 
 	['$scope',
 	 '$routeParams',
 	 '$http',
