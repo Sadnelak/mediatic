@@ -1,3 +1,4 @@
+"use strict";
 angular
 		.module('login')
 		.controller('LoginCtrl',
@@ -8,10 +9,11 @@ angular
 			 'UrlConnection',
 			 
 		function($scope, $routeParams, $http, RequeteLogin, UrlConnection){
-			var url = UrlConnection.valeur;
-			console.log(url);
-			var username = "aze";
-			var password = "aze";
+				$scope.submit = function(){
+					
+					console.log(RequeteLogin.postUser($scope.user));
+				}
+					
 			//var authdata = btoa(username+':'+password);
 //			var authdata = (username+':'+password);
 //			$http.defaults.headers.common['Authorization']='Basic'+authdata;
