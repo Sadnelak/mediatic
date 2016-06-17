@@ -1,5 +1,7 @@
 .settings/
 .project
 .classpath
-target/
-/bin/
+target/**
+/bin/**
+/app/bower_components/**
+/node_modules/**
