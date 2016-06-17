@@ -1,10 +1,10 @@
-angular.module('mediatic', ['ngRoute']);
+angular.module('mediatic', ['ngRoute', 'login', 'adherent', 'media']);
 
 angular
 	.module('mediatic')
 	.config(function($routeProvider){
 		
-		$routeProvider.otherwise('/loggin');
+		$routeProvider.otherwise('/login');
 
 		
 	});
