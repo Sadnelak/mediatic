@@ -1,4 +1,4 @@
-angular.module('media').controller('CreationMediaController', 
+angular.module('media').controller('CreationMediaCtrl', 
 	['$scope',
 	 '$routeParams',
 	 '$http',

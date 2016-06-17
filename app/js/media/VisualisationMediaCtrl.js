@@ -1,4 +1,4 @@
-angular.module('media').controller('VisualisationMediaController', 
+angular.module('media').controller('VisualisationMediaCtrl', 
 	['$scope',
 	 '$routeParams',
 	 '$http',
