@@ -3,6 +3,9 @@ angular
 		.controller('CreationAdherentCtrl', function(){
 			
 			
+			ajoutAdherent = function(){};
+			
+			
 			
 			
 			
