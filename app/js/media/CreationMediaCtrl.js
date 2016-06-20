@@ -17,7 +17,8 @@ angular.module('media').controller('CreationMediaCtrl',
 				
 				if(evalOeuvre){
 					console.log("good : ",$scope.oeuvre);
-					RequeteMedia.postMCreation($scope.oeuvre).then(function(result){
+					RequeteMedia.mAccession().then(function(result){
+					/*RequeteMedia.postMCreation($scope.oeuvre).then(function(result){*/
 						system.log("result :", result);
 						system.log("result.data :", result.data);
 					});

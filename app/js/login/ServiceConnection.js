@@ -80,11 +80,12 @@ angular.module('login').factory(
 				var promise = $http.get(UrlConnection.mRecherche).then(
 						function(resultat) {
 							console.log(resultat.data)
-							return resultat.data;
+							return promise;
 						}, function() {
 							console.error('error');
-							return [];
+							return promise;
 						});
+				return promise;
 
 			};
 
@@ -92,11 +93,12 @@ angular.module('login').factory(
 				var promise = $http.get(UrlConnection.mRechercheT).then(
 						function(resultat) {
 							console.log(resultat.data)
-							return resultat.data;
+							return promise;
 						}, function() {
 							console.error('error');
-							return [];
+							return promise;
 						});
+				return promise;
 
 			};
 			
@@ -104,11 +106,12 @@ angular.module('login').factory(
 				var promise = $http.get(UrlConnection.mAccession).then(
 						function(resultat) {
 							console.log(resultat.data)
-							return resultat.data;
+							return promise;
 						}, function() {
 							console.error('error');
-							return [];
+							return promise;
 						});
+				return promise;
 
 			};
 			
@@ -120,7 +123,7 @@ angular.module('login').factory(
 							return promise2;
 						}, function() {
 							console.error('error');
-							return [];
+							return promise2;
 						});
 				return promise2;
 			}
@@ -130,11 +133,12 @@ angular.module('login').factory(
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return resultat2;
+							return promise2;
 						}, function() {
 							console.error('error');
-							return [];
+							return promise2;
 						});
+				return promise2;
 			}
 	
 			
