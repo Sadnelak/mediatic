@@ -83,11 +83,12 @@ angular.module('media').factory(
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return resultat2;
+							return promise2;
 						}, function() {
 							console.error('error');
 							return [];
 						});
+				return promise2;
 			}
 			
 			s.postMModification = function(monMedia) {
