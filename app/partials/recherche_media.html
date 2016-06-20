@@ -1,1 +1,34 @@
-﻿<h2> Page de recherche d'un média</h2>
+<h2> Page de recherche d'un m&eacute;dia</h2>
+
+<button type="button" ng-click="tenterAccesCreation()">Cr&eacute;er nouveau m&eacute;dia</button><br>
+<label for="champTitre">Titre :</label>
+<input type="text" name="champTitre" ng-model="champTitre" /><br>
+<label for="champAuteur">Auteur :</label>
+<input type="text" name="champAuteur" ng-model="champAuteur" /><br>
+<label for="selectType"> Multiple select: </label><br>
+<select name="multipleSelect" ng-model="selectType">
+  <option value="">-</option>
+  <option value="livre">Livre</option>
+  <option value="cd">CD</option>
+  <option value="dvd">DVD</option>
+</select><br>
+
+
+<button type="button" ng-click="majVariableRecherche()">Recherche</button>
+
+<table>
+	<tr>
+		<th ng-click="trier('titre')">Titre</th>
+		<th ng-click="trier('type')">Type</th>
+		<th ng-click="trier('auteur')">Auteur</th>
+		<th ng-click="trier('emprunteur')">Emprunteur</th> 
+		<th ng-click="trier('dateRetour')">Date de retour</th>
+	</tr> 
+	<tr ng-repeat="media in listeMedias | filter:{auteur:rechercheAuteur} | filter:{titre:rechercheTitre} | filter:{type:rechercheType}">
+		<td ng-bind="media.titre"></td>
+		<td ng-bind="media.type"></td>
+		<td ng-bind="media.auteur"></td>
+		<td ng-bind="media.emprunteur"></td>
+		<td ng-bind="media.dateRetour"></td>
+	</tr>
+</table>
