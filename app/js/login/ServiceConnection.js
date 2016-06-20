@@ -4,6 +4,7 @@ angular.module('login').factory(
 		function($http, $routeParams, UrlConnection) {
 
 			
+			
 			var s = {}
 			s.getCRight = function() {
 				var promise = $http.get(UrlConnection.cRight).then(
@@ -36,7 +37,40 @@ angular.module('login').factory(
 			return s;
 		});
 
-angular.module('media').factory(
+
+
+
+angular.module('login').factory(
+		'ServiceAuth',
+		function($http, $routeParams, UrlConnection, RequeteLogin) {
+
+			var connect = false;
+			var AuthService = {};
+			AuthService.isConnected = function(){
+				return connect;
+			};
+			
+			AuthService.connect = function(login, password){
+				RequeteLogin.postCLogin({login : login, mdp: password}).then(function(response){
+					if(response){
+						var crypt = 'Basic ' +btoa(login+':'+password);
+						connect = true;
+						$http.defaults.headers.common['Autorization']=crypt;
+						
+					}
+				});
+			};
+			AuthService.disconnect = function(){
+				connect = false;
+				$http.defaults.headers.common['Autorization']='Basic ';
+			}
+			return AuthService;
+
+});
+
+
+
+angular.module('login').factory(
 		'RequeteMedia',
 		function($http, $routeParams, UrlConnection) {
 
@@ -106,3 +140,5 @@ angular.module('media').factory(
 			
 			return s;
 		});
+
+
