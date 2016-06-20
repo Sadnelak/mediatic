@@ -1,9 +1,12 @@
 <h2> Page de login</h2>
-<form ng-submit="submit()">
+<form ng-submit="submit()"  ng-show="!isConnected">
 	Entrez votre ID et votre MDP </br>
-	<input type="text" ng-model="user.username" placeHolder="User"/>
-	<input type="password" ng-model="user.password" placeHolder="Password" /><br>
+	<input type="text" id="user" ng-model="user.username" placeHolder="User"/>
+	<input type="password" id="password" ng-model="user.password" placeHolder="Password" /><br>
 	<input type="submit" id="submit" value="Se connecter" />
 	
 </form>
-
+<form ng-submit="logout()"  ng-show="isConnected">
+	<input type="submit" id="logout" value="Se déconnecter"/>
+	
+</form>

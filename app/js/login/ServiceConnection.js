@@ -51,13 +51,13 @@ angular.module('login').factory(
 			};
 			
 			AuthService.connect = function(login, password){
-				RequeteLogin.postCLogin({login : login, mdp: password}).then(function(response){
+				return RequeteLogin.postCLogin({login : login, mdp: password}).then(function(response){
 					if(response){
 						var crypt = 'Basic ' +btoa(login+':'+password);
 						connect = true;
 						$http.defaults.headers.common['Autorization']=crypt;
-						
-					}
+						return true;
+					}else return false;
 				});
 			};
 			AuthService.disconnect = function(){
