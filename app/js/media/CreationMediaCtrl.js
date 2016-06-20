@@ -17,7 +17,16 @@ angular.module('media').controller('CreationMediaCtrl',
 				
 				if(evalOeuvre){
 					console.log("good : ",$scope.oeuvre);
-					RequeteMedia.getMRecherche().then(function(result){
+					//mise a niveau de oeuvre pour etre envoyé sur le serveur
+					var monOeuvreAAjouter = {
+						auteur : $scope.oeuvre.auteur,
+						emprunteurs	: Array[0] ,
+						id : 7000,
+						titre : $scope.oeuvre.titre,
+						type : $scope.oeuvre.type
+					};
+
+					RequeteMedia.postMCreation(monOeuvreAAjouter).then(function(result){
 					/*RequeteMedia.postMCreation($scope.oeuvre).then(function(result){*/
 						console.log("result :", result);
 						console.log("result.data :", result.data);
