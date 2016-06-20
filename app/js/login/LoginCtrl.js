@@ -18,10 +18,10 @@ angular
 					if ($scope.user===undefined||$scope.user.username===undefined||$scope.user.password===undefined){
 						alert("go fuck yourself");
 					}else{
-						var verifConnection = RequeteLogin.postCLogin({
+						var verifConnection = AuthService.connect(
 							login : $scope.user.username, 
 							mdp : $scope.user.password
-						});
+						);
 						
 						verifConnection.then(function(resultat2) {
 							if (resultat2 && $scope.user.username =="admin"){
