@@ -1,7 +1,9 @@
 angular
 		.module('adherent')
-		.controller('RechercheAdherentCtrl', function($scope){
-			
+		.controller('RechercheAdherentCtrl', 
+			['$scope','$window','TriService' ,                              
+            function($scope,$window,TriService){
+				
 			/*Données adhérents*/
 			$scope.listeAdherents=[
 			    {identifiant:'IceWizard',
@@ -51,7 +53,16 @@ angular
 			
 			/*Tri*/
 			$scope.cleStockee='';
+			$scope.trier = function(cle){
+				//console.log(TriService.bonjour(cle));
+				TriService.trier(cle,$scope,$scope.listeAdherents);
+			}
 			
+			
+			
+			//TriService.trier($scope);
+			
+			/*
 			$scope.triCle = function(cle,desc){
 				return function(a,b){
 					return desc ? ~~(a[cle] < b[cle]):
@@ -59,6 +70,7 @@ angular
 				};
 			}
 	
+			
 			$scope.trier = function(cle){
 				if ($scope.cleStockee == cle){
 					$scope.listeAdherents.sort($scope.triCle(cle,true));
@@ -69,7 +81,8 @@ angular
 					$scope.listeAdherents.sort($scope.triCle(cle,false));
 					$scope.cleStockee = cle;
 				}
-			}
+			}*/
+			
 			
 			/*MAJ variables de recherche*/
 			$scope.majVariableRecherche = function(){
@@ -77,10 +90,27 @@ angular
 				$scope.rechercheIdentifiant = $scope.champIdentifiant;
 			}
 			
+			/*Tentative d'accéder à l'ajout*/
+			$scope.droits = false;
+			$scope.tenterAccesCreation = function(){
+				if($scope.droits)
+					$window.location.href = "/index.html";
+				else
+					console.log('Vous n\'avez pas les droits pour ajouter un nouvel adhérent.');
+			}
 			
 				
 				
 		
 			
 			
+		}]).filter('startsWith',function(){
+			return function(input,pseudo){
+				if(input===undefined){
+					return undefined;
+				}
+				return input.filter(function(adherent){
+					return (pseudo === undefined) || (adherent.identifiant.match(new RegExp("^"+pseudo,'i'))); //'^'+
+				});
+			}
 		});
