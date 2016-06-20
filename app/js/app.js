@@ -4,7 +4,7 @@ angular
 	.module('mediatic')
 	.config(function($routeProvider,$httpProvider){
 		
-		$httpProvider.defaults.headers.post['content-Type']='applications/x-www-form-urlencoded';
+		$httpProvider.defaults.headers.post['Content-Type']='application/x-www-form-urlencoded';
 		$routeProvider.otherwise('/login');
 
 		
