@@ -17,7 +17,10 @@ angular.module('media').controller('CreationMediaCtrl',
 				
 				if(evalOeuvre){
 					console.log("good : ",$scope.oeuvre);
-					RequeteMedia.postCreation($scope.oeuvre);
+					RequeteMedia.postMCreation($scope.oeuvre).then(function(result){
+						system.log("result :", result);
+						system.log("result.data :", result.data);
+					});
 				}else{
 					alert(" not good... you asshole");
 				}
