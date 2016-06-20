@@ -1,7 +1,8 @@
 angular.module('media').controller('CreationMediaCtrl', 
 	['$scope',
 	 '$http',
-	 function($scope, $http){
+	 'RequeteMedia',
+	 function($scope, $http, RequeteMedia){
 		
 		
 		$scope.ajoutOeuvre = function(){
@@ -16,6 +17,7 @@ angular.module('media').controller('CreationMediaCtrl',
 				
 				if(evalOeuvre){
 					console.log("good : ",$scope.oeuvre);
+					RequeteMedia.postCreation($scope.oeuvre);
 				}else{
 					alert(" not good... you asshole");
 				}

@@ -3,11 +3,8 @@ angular
 		.controller('CreationAdherentCtrl', function(){
 			
 			
-			ajoutAdherent = function(){};
-			
-			
-			
-			
-			
+			ajoutAdherent = function(){
+				
+			};
 			
 		});
