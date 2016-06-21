@@ -5,17 +5,17 @@
 	<div>
 		<span>Veuillez renseigner les données à enregistrer sur le
 			serveur</span>
-	</div>
+		</div>
 
-	<div>
-		<span>Si vous n'êtes pas habilité pour cette opération,
-			veuillez vous déconnecter</span>
-	</div>
+		<div>
+			<span>Si vous n'êtes pas habilité pour cette opération,
+				veuillez vous déconnecter</span>
+			</div>
 
-</div>
+		</div>
 
-<div>
-	<form>
+		<div>
+			<form>
 <!-- 	
 Nom et prénom
 Date de naissance
@@ -29,59 +29,63 @@ Les champs suivants sont obligatoires :
 Nom et prénom
 Date de naissance
 E-mail
-	 -->
-		<div>
-			<label>Nom du nouvel adhérent</label>
-			<input type="text" ng-model="adherent.nom">
-		</div>
-		<div>
-			<label>Prénom du nouvel adhérent</label>
-			<input type="text" ng-model="adherent.prenom">
-		</div>
-		<div>
-			<label>Mail</label>
-			<input type="text" ng-model="adherent.mail">
-		</div>
-		<div>
-			<label>Date de naissance (format JJ-MM-AAAA)</label>
-			</br>
-			<input type="text" ng-model="adherent.dateNaissance.jour" placeholder="JJ" ng-blur="calculAge() verifJour(adherent.dateNaissance.jour)">
-			<label>-</label>
-			<input type="text" ng-model="adherent.dateNaissance.mois" placeholder="MM" ng-blur="calculAge()">
-			<label>-</label>
-			<input type="text" ng-model="adherent.dateNaissance.annee" placeholder="AAAA" ng-blur="calculAge()">
-			</br>
-			<label>Age</label>
-			<input type="text" ng-model="adherent.age" disabled="true">
+-->
+<div>
+	<label>Nom du nouvel adhérent</label>
+	<input type="text" ng-model="adherent.nom">
+</div>
+<div>
+	<label>Prénom du nouvel adhérent</label>
+	<input type="text" ng-model="adherent.prenom">
+</div>
+<div>
+	<label>Mail</label>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon1">@</span>
+		<input type="text" class="form-control" placeholder="Mail de l'adérent" aria-describedby="basic-addon1" ng-model="adherent.mail">
+	</div>
+	<input type="text" >
+</div>
+<div>
+	<label>Date de naissance (format JJ-MM-AAAA)</label>
+</br>
+<input type="text" ng-model="adherent.dateNaissance.jour" placeholder="JJ" ng-blur="calculAge()">
+<label>-</label>
+<input type="text" ng-model="adherent.dateNaissance.mois" placeholder="MM" ng-blur="calculAge()">
+<label>-</label>
+<input type="text" ng-model="adherent.dateNaissance.annee" placeholder="AAAA" ng-blur="calculAge()">
+</br>
+<label>Age</label>
+<input type="text" ng-model="adherent.age" disabled="true">
 
-		</div>
-		<div>
-			<label>Adresse</label>
-			<input type="text" ng-model="adherent.adresse">
-		</div>
-		<div>
-			<label>Ville</label>
-			<input type="text" ng-model="adherent.ville">
-		</div>
-		<div>
-			<label>Code Postal</label>
-			<input type="text" ng-model="adherent.cP">
-		</div>
-		<div>
-			<label>Date de cotisation (format JJ-MM-AAAA)</label>
-			</br>
-			<input type="text" ng-model="adherent.dateCotisation.jour" placeholder="JJ">
-			<label>-</label>
-			<input type="text" ng-model="adherent.dateCotisation.mois" placeholder="MM">
-			<label>-</label>
-			<input type="text" ng-model="adherent.dateCotisation.annee" placeholder="AAAA">
-		</div>
-		<div>
-			<label>Montant de la cotisation</label>
-			<input type="text" ng-model="adherent.montantCotisation">
-		</div>
-		<div>
-			<input type="button" value="Ajouter l'adhérent" ng-click="ajoutAdherent()">
-		</div>
-	</form>
+</div>
+<div>
+	<label>Adresse</label>
+	<input type="text" ng-model="adherent.adresse">
+</div>
+<div>
+	<label>Ville</label>
+	<input type="text" ng-model="adherent.ville">
+</div>
+<div>
+	<label>Code Postal</label>
+	<input type="text" ng-model="adherent.cP">
+</div>
+<div>
+	<label>Date de cotisation (format JJ-MM-AAAA)</label>
+</br>
+<input type="text" ng-model="adherent.dateCotisation.jour" placeholder="JJ"  ng-blur="verif(adherent.dateCotisation)">
+<label>-</label>
+<input type="text" ng-model="adherent.dateCotisation.mois" placeholder="MM">
+<label>-</label>
+<input type="text" ng-model="adherent.dateCotisation.annee" placeholder="AAAA">
+</div>
+<div>
+	<label>Montant de la cotisation</label>
+	<input type="text" ng-model="adherent.montantCotisation">
+</div>
+<div>
+	<input type="button" value="Ajouter l'adhérent" ng-click="ajoutAdherent()">
+</div>
+</form>
 </div>
