@@ -1,8 +1,8 @@
 angular
 		.module('adherent')
 		.controller('RechercheAdherentCtrl', 
-			['$scope','$window','TriService','RequeteAdherent' ,                              
-            function($scope,$window,TriService,RequeteAdherent){
+			['$scope','$window','$location','TriService','RequeteAdherent' ,                              
+            function($scope,$window,$location,TriService,RequeteAdherent){
 							
 			console.log("[RechercheAdherentCtrl]");
 			//Remarque : code repris de RechercheMedia et transformé.  
@@ -54,10 +54,11 @@ angular
 			$scope.droits = true;
 			$scope.tenterAccesCreation = function(){
 				if($scope.droits)
-					$window.location.href = "#/recherche_adherent";
+					$location.path('/creation_adherent');
 				else
 					console.log('Vous n\'avez pas les droits pour ajouter un nouvel adhérent.');
 			}
+			
 		}]).filter('startsWith',function(){
 			return function(input,pseudo){
 				if(input===undefined){
