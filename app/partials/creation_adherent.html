@@ -15,7 +15,7 @@
 </div>
 
 <div>
-	<form action="">
+	<form>
 <!-- 	
 Nom et prénom
 Date de naissance
@@ -32,39 +32,53 @@ E-mail
 	 -->
 		<div>
 			<label>Nom du nouvel adhérent</label>
-			<input type="text" ng-bind="adherent.nom">
+			<input type="text" ng-model="adherent.nom">
 		</div>
 		<div>
 			<label>Prénom du nouvel adhérent</label>
-			<input type="text" ng-bind="adherent.prenom">
+			<input type="text" ng-model="adherent.prenom">
 		</div>
 		<div>
 			<label>Mail</label>
-			<input type="text" ng-bind="adherent.mail">
+			<input type="text" ng-model="adherent.mail">
 		</div>
 		<div>
 			<label>Date de naissance (format JJ-MM-AAAA)</label>
-			<input type="text" ng-bind="adherent.dateNaissance">
+			</br>
+			<input type="text" ng-model="adherent.dateNaissance.jour" placeholder="JJ" ng-blur="calculAge() verifJour(adherent.dateNaissance.jour)">
+			<label>-</label>
+			<input type="text" ng-model="adherent.dateNaissance.mois" placeholder="MM" ng-blur="calculAge()">
+			<label>-</label>
+			<input type="text" ng-model="adherent.dateNaissance.annee" placeholder="AAAA" ng-blur="calculAge()">
+			</br>
+			<label>Age</label>
+			<input type="text" ng-model="adherent.age" disabled="true">
+
 		</div>
 		<div>
 			<label>Adresse</label>
-			<input type="text" ng-bind="adherent.adresse">
+			<input type="text" ng-model="adherent.adresse">
 		</div>
 		<div>
 			<label>Ville</label>
-			<input type="text" ng-bind="adherent.ville">
+			<input type="text" ng-model="adherent.ville">
 		</div>
 		<div>
 			<label>Code Postal</label>
-			<input type="text" ng-bind="adherent.cP">
+			<input type="text" ng-model="adherent.cP">
 		</div>
 		<div>
 			<label>Date de cotisation (format JJ-MM-AAAA)</label>
-			<input type="text" ng-bind="adherent.dateCotisation">
+			</br>
+			<input type="text" ng-model="adherent.dateCotisation.jour" placeholder="JJ">
+			<label>-</label>
+			<input type="text" ng-model="adherent.dateCotisation.mois" placeholder="MM">
+			<label>-</label>
+			<input type="text" ng-model="adherent.dateCotisation.annee" placeholder="AAAA">
 		</div>
 		<div>
 			<label>Montant de la cotisation</label>
-			<input type="text" ng-bind="adherent.montantCotisation | number:0">
+			<input type="text" ng-model="adherent.montantCotisation">
 		</div>
 		<div>
 			<input type="button" value="Ajouter l'adhérent" ng-click="ajoutAdherent()">
