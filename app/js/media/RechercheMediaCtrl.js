@@ -1,11 +1,11 @@
 angular.module('media').controller('RechercheMediaCtrl', 
 	['$scope',
-	 '$window','TriService', 
-	 function($scope, $window, TriService){
+	 '$window','TriService','RequeteMedia', 
+	 function($scope, $window, TriService,RequeteMedia){
 		
 		
-		/*Données adhérents*/
-		$scope.listeMedias=[{
+		/*Données médias*/
+		/*$scope.listeMedias=[{
 			titre:"Nihal de la Terre du Vent",
 			type:"Livre",
 			auteur:"Troisi Licia",
@@ -43,7 +43,30 @@ angular.module('media').controller('RechercheMediaCtrl',
 			emprunteur:"FelixLeChat",
 			dateRetour:"1995-03-04"
 		}
-		];
+		];*/
+		$scope.listeMedias = [];
+		
+		var taille = 0;
+		console.log('Avant toute requête, taille = '+taille);
+		
+		RequeteMedia.getMRechercheT().then(function(taille2){console.log('A la recherche de la taille : --- '+taille2+' ---');taille= taille2;},function(reason){console.log('Taille indisponible !')});
+		
+		console.log('Avant le push, taille = '+taille);
+		
+		$scope.listeMedias.push(RequeteMedia.getMRecherche().then(function(data){
+			var tableau = [];
+			console.log('Après le push, taille = '+taille);
+			for(var i = 0; i < taille; i++){
+				console.log(data[i].titre+" "+data[i].auteur+" "+data[i].type);
+				tableau.push({
+					titre:data[i].titre,
+					auteur:data[i].auteur,
+					type:data[i].type,
+					emprunteur:'',
+					dateRetour:'2001-01-01'});
+			}
+			return tableau;
+		},function(reason){console.log('Echec critique ! ')}));
 		
 		/*Tri*/
 		$scope.cleStockee='';
