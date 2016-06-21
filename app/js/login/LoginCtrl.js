@@ -1,16 +1,17 @@
 "use strict";
 angular
-		.module('login')
+		.module('mediatic')
 		.controller('LoginCtrl',
 			['$scope',
 			 '$routeParams',
 			 '$http',
+			 '$location',
 			 'RequeteLogin',
 			 'UrlConnection',
 			 'RequeteMedia',
 			 'ServiceAuth',
 			 
-		function($scope, $routeParams, $http, RequeteLogin, UrlConnection, RequeteMedia, ServiceAuth){
+		function($scope, $routeParams, $http,$location, RequeteLogin, UrlConnection, RequeteMedia, ServiceAuth){
 			
 			$scope.isConnected = false;
 						
@@ -40,4 +41,12 @@ angular
 				$scope.user.password = '';
 			}
 			
+			$scope.verifConnect = function(){
+				console.log("function");
+				if (!ServiceAuth.isConnected()) {
+					$location.path('#');
+					console.log("not co");
+				}else{console.log("co");}
+			}
+
 		}]);

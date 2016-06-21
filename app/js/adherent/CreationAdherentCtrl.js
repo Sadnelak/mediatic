@@ -58,13 +58,13 @@ angular
 				}else{console.log("ok");}
 
 			};
-			$scope.verifConnect = function(){
+		/*	$scope.verifConnect = function(){
 				console.log("function");
 				if (!ServiceAuth.isConnected()) {
 					$location.path('#');
 					console.log("not co");
 				}else{console.log("co");}
 			}
-
+*/
 
 		});
