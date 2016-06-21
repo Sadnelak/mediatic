@@ -2,9 +2,12 @@ angular.module('media').controller('CreationMediaCtrl',
 	['$scope',
 	 '$http',
 	 'RequeteMedia',
-	 function($scope, $http, RequeteMedia){
+	 function($scope, $http,RequeteMedia){
 		
 		
+
+
+
 		$scope.ajoutOeuvre = function(){
 			if($scope.oeuvre===undefined){
 				alert(" not good... you asshole, at least create the object");

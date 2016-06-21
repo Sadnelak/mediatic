@@ -1,39 +1,41 @@
-<h2>Page de création d'un média</h2>
+<section ng-init="verifConnect()">
+	<h2>Page de création d'un média</h2>
 
-<div>
-	<h3>Instruction</h3>
 	<div>
-		<span>Veuillez renseigner les données à enregistrer sur le
-			serveur</span>
+		<h3>Instruction</h3>
+		<div>
+			<span>Veuillez renseigner les données à enregistrer sur le
+				serveur</span>
+		</div>
+
+		<div>
+			<span>Si vous n'êtes pas habilité pour cette opération,
+					veuillez vous déconnecter</span>
+		</div>
+
 	</div>
 
 	<div>
-		<span>Si vous n'êtes pas habilité pour cette opération,
-			veuillez vous déconnecter</span>
+		<form  ng-submit="ajoutOeuvre()">
+			<div>
+				<label>Type de l'oeuvre</label>
+				<select name="typeOeuvre" ng-model="oeuvre.type">
+					<option value="Livre">Livre</option>
+					<option value="CD">CD</option>
+					<option value="DVD">DVD</option>
+				</select>
+			</div>
+			<div>
+				<label>Nom de l'auteur</label>
+				<input type="text" ng-model="oeuvre.auteur">
+			</div>
+			<div>
+				<label>Nom de l'oeuvre</label>
+				<input type="text" ng-model="oeuvre.titre">
+			</div>
+			<div>
+				<input type="submit" id="submit" value="Ajouter de l'Oeuvre" />
+			</div>
+		</form>
 	</div>
-
-</div>
-
-<div>
-<form  ng-submit="ajoutOeuvre()">
-		<div>
-			<label>Type de l'oeuvre</label>
-			<select name="typeOeuvre" ng-model="oeuvre.type">
-				<option value="Livre">Livre</option>
-				<option value="CD">CD</option>
-				<option value="DVD">DVD</option>
-			</select>
-		</div>
-		<div>
-			<label>Nom de l'auteur</label>
-			<input type="text" ng-model="oeuvre.auteur">
-		</div>
-		<div>
-			<label>Nom de l'oeuvre</label>
-			<input type="text" ng-model="oeuvre.titre">
-		</div>
-		<div>
-			<input type="submit" id="submit" value="Ajouter oeuvre" />
-		</div>
-	</form>
-</div>
+</section>
