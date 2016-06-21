@@ -1,16 +1,31 @@
+(function(){
+'use strict';
+
 angular.module('media').controller('VisualisationMediaCtrl', 
 	['$scope',
 	 '$routeParams',
 	 'RequeteMedia',
 	 function($scope, $routeParams, RequeteMedia){
 		
-		$scope.maFct=function(){
-			return RequeteMedia.getMAccession($routeParams.ref).then(
+		if($scope.isConnected){
+			
+		
+			RequeteMedia.getMAccession($routeParams.ref).then(
 				function(resultat){
-					$scope.media = resultat.data;
+					$scope.media = resultat;
+					console.log($scope.media);
 				}, function (){
 					console.error('Erreur');
 				}
 			);
-		};
+			$scope.unlockModifier = function(){
+				//verif conncté=admin
+						//afficher btn sauver
+						//enable les input
+				
+				
+			}
+		}
 	}]);
+
+})();

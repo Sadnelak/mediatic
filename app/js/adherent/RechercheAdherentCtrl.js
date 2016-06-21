@@ -3,41 +3,45 @@ angular
 		.controller('RechercheAdherentCtrl', 
 			['$scope','$window','$location','TriService','RequeteAdherent' ,                              
             function($scope,$window,$location,TriService,RequeteAdherent){
-							
-			console.log("[RechercheAdherentCtrl]");
-			//Remarque : code repris de RechercheMedia et transformé.  
-			RequeteAdherent.getARechercheT().then(
-					function(taille){
-						RequeteAdherent.getARecherche().then(
-							function(data){
-								var tableau = [];
-								for(var i = 0; i < taille; i++){
-									//splitter = data[i].date_naissance.split("T");
-									tableau.push({
-										id:i,
-										identifiant:''+data[i].id,
-										nomPrenom:data[i].nom+' '+data[i].prenom,
-										dateNaissance:(data[i].date_naissance.split("T"))[0],//splitter[0],
-										aJourCotis:true,
-										nbMedias:0
-									});
-								}
-								$scope.listeAdherents = tableau;
-							},function(reason){
-								console.log('Echec insertion données !');
-							});		
-					},function(reason){
-						console.log('Taille indisponible !');
-					}
-				);
+				
+			if($scope.isConnected){
+				
+				console.log("[RechercheAdherentCtrl]");
+				//Remarque : code repris de RechercheMedia et transformé.  
+				RequeteAdherent.getARechercheT().then(
+						function(taille){
+							RequeteAdherent.getARecherche().then(
+								function(data){
+									var tableau = [];
+									for(var i = 0; i < taille; i++){
+										//splitter = data[i].date_naissance.split("T");
+										tableau.push({
+											id:i,
+											identifiant:''+data[i].id,
+											nomPrenom:data[i].nom+' '+data[i].prenom,
+											dateNaissance:(data[i].date_naissance.split("T"))[0],//splitter[0],
+											aJourCotis:true,
+											nbMedias:0
+										});
+									}
+									$scope.listeAdherents = tableau;
+								},function(reason){
+									console.log('Echec insertion données !');
+								});		
+						},function(reason){
+							console.log('Taille indisponible !');
+						}
+					);
+				
+				/*Cotisation*/
+				$scope.chaineAJourCotis = function(adherent){
+					if (adherent.aJourCotis == true)
+						return "Oui";
+					else
+						return "Non";
+				};
+			}				
 			
-			/*Cotisation*/
-			$scope.chaineAJourCotis = function(adherent){
-				if (adherent.aJourCotis == true)
-					return "Oui";
-				else
-					return "Non";
-			};
 			
 			/*Tri*/
 			$scope.cleStockee='';

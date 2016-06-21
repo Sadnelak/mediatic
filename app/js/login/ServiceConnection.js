@@ -107,8 +107,14 @@ angular.module('login').factory(
 
 			};
 			
-			s.getMAccession = function() {
-				var promise = $http.get(UrlConnection.mAccession).then(
+			s.getMAccession = function(ref) {
+				var  config = {
+						params : {
+							id : ref
+						}
+						
+				};
+				var promise = $http.get(UrlConnection.mAccession,config).then(
 						function(resultat) {
 							console.log(resultat.data)
 							return resultat.data;

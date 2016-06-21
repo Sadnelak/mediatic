@@ -6,31 +6,34 @@ angular.module('media').controller('RechercheMediaCtrl',
 		$scope.listeMedias = [];
 		
 		var taille = 0;
-		console.log('Avant toute requête, taille = '+taille);
+		if($scope.isConnected){
+			console.log('Avant toute requête, taille = '+taille);
+			
+			RequeteMedia.getMRechercheT().then(
+				function(taille){
+					RequeteMedia.getMRecherche().then(
+						function(data){
+							var tableau = [];
+							for(var i = 0; i < taille; i++){
+								//console.log(data[i].titre+" "+data[i].auteur+" "+data[i].type);
+								tableau.push({
+									titre:data[i].titre,
+									auteur:data[i].auteur,
+									type:data[i].type,
+									id:i,
+									emprunteurs:[''],
+									dateRetour:'2001-01-01'});
+							}
+							$scope.listeMedias = tableau;
+						},function(reason){
+							console.log('Echec insertion données !');
+						})
+				},function(reason){
+					console.log('Taille indisponible !');
+				}
+			);
+		}
 		
-		RequeteMedia.getMRechercheT().then(
-			function(taille){
-				RequeteMedia.getMRecherche().then(
-					function(data){
-						var tableau = [];
-						for(var i = 0; i < taille; i++){
-							//console.log(data[i].titre+" "+data[i].auteur+" "+data[i].type);
-							tableau.push({
-								titre:data[i].titre,
-								auteur:data[i].auteur,
-								type:data[i].type,
-								id:i,
-								emprunteurs:[''],
-								dateRetour:'2001-01-01'});
-						}
-						$scope.listeMedias = tableau;
-					},function(reason){
-						console.log('Echec insertion données !');
-					})
-			},function(reason){
-				console.log('Taille indisponible !');
-			}
-		);
 			
 		/*Tri*/
 		$scope.cleStockee='';
