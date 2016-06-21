@@ -23,6 +23,7 @@ angular
 							$scope.user.username, 
 							 $scope.user.password
 						).then (function(resultat) {
+							console.log(resultat);
 							if(resultat == true){
 								$scope.isConnected = true;
 							}
@@ -30,7 +31,7 @@ angular
 							console.error('error');
 							return [];
 						});
-										
+									
 				}
 			}
 			$scope.logout = function(){

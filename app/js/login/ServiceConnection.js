@@ -59,7 +59,7 @@ angular.module('login').factory(
 						$http.defaults.headers.common['Authorization']=crypt;
 						
 					}
-
+				return true;
 				});
 			};
 			AuthService.disconnect = function(){
