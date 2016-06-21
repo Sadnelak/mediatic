@@ -2,7 +2,7 @@
 
 angular
 .module('adherent')
-.controller('CreationAdherentCtrl', function($scope){
+.controller('CreationAdherentCtrl', function($scope,$location,ServiceAuth){
 
 
 			//$scope.adherent={};
@@ -38,26 +38,33 @@ angular
 				date.jour=parseInt(date.jour);
 				date.mois=parseInt(date.mois);
 				date.annee=parseInt(date.annee);
-				
+				console.log(date);
 				
 				if (date.jour<0 || date.jour >31 || typeof(date.jour)!="number" || !Number.isInteger(date.jour)) {
-					
+					console.log(date);	
 					date.jour=undefined;
-				}
+				}else{console.log("ok");}
 
 
 				if (date.mois<0 || date.mois >12 || typeof(date.mois)!="number" || !Number.isInteger(date.mois)) {
-					
+					console.log(date);
 					date.mois=undefined;
-				}
+				}else{console.log("ok");}
 
 
 				if (typeof(date.annee)!="number" || !Number.isInteger(date.annee)) {
-					
+					console.log(date);
 					date.annee=undefined;
-				}				
+				}else{console.log("ok");}
 
 			};
+			$scope.verifConnect = function(){
+				console.log("function");
+				if (!ServiceAuth.isConnected()) {
+					$location.path('#');
+					console.log("not co");
+				}else{console.log("co");}
+			}
 
 
 		});

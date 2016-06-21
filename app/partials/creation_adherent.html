@@ -1,21 +1,22 @@
-<h2>Page de création d'un adhérent</h2>
+<section ng-init="verifConnect()">
+	<h2>Page de création d'un adhérent</h2>
 
-<div>
-	<h3>Instruction</h3>
-	<div>
-		<span>Veuillez renseigner les données à enregistrer sur le
-			serveur</span>
-		</div>
-
+	<div >
+		<h3>Instruction</h3>
 		<div>
-			<span>Si vous n'êtes pas habilité pour cette opération,
-				veuillez vous déconnecter</span>
+			<span>Veuillez renseigner les données à enregistrer sur le
+				serveur</span>
 			</div>
 
-		</div>
+			<div>
+				<span>Si vous n'êtes pas habilité pour cette opération,
+					veuillez vous déconnecter</span>
+				</div>
 
-		<div>
-			<form>
+			</div>
+
+			<div>
+				<form>
 <!-- 	
 Nom et prénom
 Date de naissance
@@ -76,9 +77,9 @@ E-mail
 </br>
 <input type="text" ng-model="adherent.dateCotisation.jour" placeholder="JJ"  ng-blur="verif(adherent.dateCotisation)">
 <label>-</label>
-<input type="text" ng-model="adherent.dateCotisation.mois" placeholder="MM">
+<input type="text" ng-model="adherent.dateCotisation.mois" placeholder="MM" ng-blur="verif(adherent.dateCotisation)">
 <label>-</label>
-<input type="text" ng-model="adherent.dateCotisation.annee" placeholder="AAAA">
+<input type="text" ng-model="adherent.dateCotisation.annee" placeholder="AAAA" ng-blur="verif(adherent.dateCotisation)">
 </div>
 <div>
 	<label>Montant de la cotisation</label>
@@ -89,3 +90,4 @@ E-mail
 </div>
 </form>
 </div>
+</section>
