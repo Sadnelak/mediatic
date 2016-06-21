@@ -21,7 +21,7 @@
 		<th ng-click="trier('titre')">Titre</th>
 		<th ng-click="trier('type')">Type</th>
 		<th ng-click="trier('auteur')">Auteur</th>
-		<th ng-click="trier('emprunteur')">Emprunteur</th> 
+		<th ng-click="trier('emprunteurs')">Emprunteur</th> 
 		<th ng-click="trier('dateRetour')">Date de retour</th>
 	</tr> 
 	<tr ng-repeat="media in listeMedias | filter:{auteur:rechercheAuteur} | filter:{titre:rechercheTitre} | filter:{type:rechercheType}">

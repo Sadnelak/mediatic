@@ -1,47 +1,34 @@
 angular
 		.module('adherent')
 		.controller('RechercheAdherentCtrl', 
-			['$scope','$window','TriService' ,                              
-            function($scope,$window,TriService){
-				
-			/*Données adhérents*/
-			$scope.listeAdherents=[
-			    {identifiant:'IceWizard',
-			     nomPrenom:'Joubert Brian',
-			     dateNaissance:'1984-09-20',
-			     aJourCotis:false,
-			     nbMedias:2},                   
-			    {identifiant:'ChocophileBenj',
-			     nomPrenom:'Chauvet Benjamin',
-			     dateNaissance:'1992-06-16',
-			     aJourCotis:true,
-			     nbMedias:0},
-			    {identifiant:'Patriiick',
-			     nomPrenom:'Bruel Patrick',
-			     dateNaissance:'1959-05-14',
-			     aJourCotis:false,
-			     nbMedias:3},
-			     {identifiant:'FelixLeChat',
-			     nomPrenom:'Clarté Felix',
-			     dateNaissance:'1988-03-23',
-			     aJourCotis:false,
-			     nbMedias:1},
-			     {identifiant:'Nihalee',
-			     nomPrenom:'Nihal Nidalee',
-			     dateNaissance:'2013-06-18',
-			     aJourCotis:true,
-			     nbMedias:5},
-			     {identifiant:'DaronCameroun',
-			     nomPrenom:'Song Alexandre',
-			     dateNaissance:'1987-09-09',
-			     aJourCotis:false,
-			     nbMedias:4},
-			     {identifiant:'UltimateWind',
-			     nomPrenom:'Freewind Rina',
-			     dateNaissance:'2010-06-15',
-			     aJourCotis:true,
-			     nbMedias:8}
-			];
+			['$scope','$window','TriService','RequeteAdherent' ,                              
+            function($scope,$window,TriService,RequeteAdherent){
+							
+			console.log("[RechercheAdherentCtrl]");
+			//Remarque : code repris de RechercheMedia et transformé.  
+			RequeteAdherent.getARechercheT().then(
+					function(taille){
+						RequeteAdherent.getARecherche().then(
+							function(data){
+								var tableau = [];
+								for(var i = 0; i < taille; i++){
+									//splitter = data[i].date_naissance.split("T");
+									tableau.push({
+										identifiant:''+data[i].id,
+										nomPrenom:data[i].nom+' '+data[i].prenom,
+										dateNaissance:(data[i].date_naissance.split("T"))[0],//splitter[0],
+										aJourCotis:true,
+										nbMedias:0
+									});
+								}
+								$scope.listeAdherents = tableau;
+							},function(reason){
+								console.log('Echec insertion données !');
+							});		
+					},function(reason){
+						console.log('Taille indisponible !');
+					}
+				);
 			
 			/*Cotisation*/
 			$scope.chaineAJourCotis = function(adherent){
@@ -54,35 +41,8 @@ angular
 			/*Tri*/
 			$scope.cleStockee='';
 			$scope.trier = function(cle){
-				//console.log(TriService.bonjour(cle));
 				TriService.trier(cle,$scope,$scope.listeAdherents);
 			}
-			
-			
-			
-			//TriService.trier($scope);
-			
-			/*
-			$scope.triCle = function(cle,desc){
-				return function(a,b){
-					return desc ? ~~(a[cle] < b[cle]):
-								 ~~(a[cle] > b[cle]);
-				};
-			}
-	
-			
-			$scope.trier = function(cle){
-				if ($scope.cleStockee == cle){
-					$scope.listeAdherents.sort($scope.triCle(cle,true));
-					$scope.cleStockee = '';
-					return;
-				}
-				else{
-					$scope.listeAdherents.sort($scope.triCle(cle,false));
-					$scope.cleStockee = cle;
-				}
-			}*/
-			
 			
 			/*MAJ variables de recherche*/
 			$scope.majVariableRecherche = function(){
@@ -91,19 +51,13 @@ angular
 			}
 			
 			/*Tentative d'accéder à l'ajout*/
-			$scope.droits = false;
+			$scope.droits = true;
 			$scope.tenterAccesCreation = function(){
 				if($scope.droits)
-					$window.location.href = "/index.html";
+					$window.location.href = "#/recherche_adherent";
 				else
 					console.log('Vous n\'avez pas les droits pour ajouter un nouvel adhérent.');
 			}
-			
-				
-				
-		
-			
-			
 		}]).filter('startsWith',function(){
 			return function(input,pseudo){
 				if(input===undefined){

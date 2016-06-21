@@ -96,8 +96,9 @@ angular.module('login').factory(
 			s.getMRechercheT = function() {
 				var promise = $http.get(UrlConnection.mRechercheT).then(
 						function(resultat) {
-							console.log(resultat.data)
-							return resultat.data;
+							console.log('[getMRechercheT] ',resultat.data.items);
+							console.log(resultat.data) //objet à 2 variables
+							return resultat.data.items;
 						}, function() {
 							console.error('error');
 							return -1;
@@ -177,8 +178,8 @@ angular.module('login').factory(
 			s.getARechercheT = function() {
 				var promise = $http.get(UrlConnection.aRechercheT).then(
 						function(resultat) {
-							console.log(resultat.data)
-							return resultat.data;
+							console.log('[getARechercheT]',resultat.data.items)
+							return resultat.data.items;
 						}, function() {
 							console.error('error');
 							return -1;
