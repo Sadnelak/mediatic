@@ -17,6 +17,8 @@
 <button type="button" ng-click="majVariableRecherche()">Recherche</button>
 
 <table>
+
+				
 	<tr>
 		<th ng-click="trier('titre')">Titre</th>
 		<th ng-click="trier('type')">Type</th>
@@ -24,11 +26,14 @@
 		<th ng-click="trier('emprunteurs')">Emprunteur</th> 
 		<th ng-click="trier('dateRetour')">Date de retour</th>
 	</tr> 
-	<tr ng-repeat="media in listeMedias | filter:{auteur:rechercheAuteur} | filter:{titre:rechercheTitre} | filter:{type:rechercheType}">
-		<td ng-bind="media.titre"></td>
-		<td ng-bind="media.type"></td>
-		<td ng-bind="media.auteur"></td>
-		<td ng-bind="media.emprunteur"></td>
-		<td ng-bind="media.dateRetour"></td>
+	
+	<tr ng-repeat="media in listeMedias | filter:{auteur:rechercheAuteur} | filter:{type:rechercheType} | filter:{titre:rechercheTitre}">
+		
+			<td><a ng-href="#/visualisation_media/{{media.id}}">{{media.titre}}</a></td>
+			<td ng-bind="media.type"></td>
+			<td ng-bind="media.auteur"></td>
+			<td ng-bind="media.emprunteur"></td>
+			<td ng-bind="media.dateRetour"></td>
+		
 	</tr>
 </table>

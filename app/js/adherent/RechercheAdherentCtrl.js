@@ -14,6 +14,7 @@ angular
 								for(var i = 0; i < taille; i++){
 									//splitter = data[i].date_naissance.split("T");
 									tableau.push({
+										id:i,
 										identifiant:''+data[i].id,
 										nomPrenom:data[i].nom+' '+data[i].prenom,
 										dateNaissance:(data[i].date_naissance.split("T"))[0],//splitter[0],

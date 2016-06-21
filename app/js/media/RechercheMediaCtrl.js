@@ -19,7 +19,8 @@ angular.module('media').controller('RechercheMediaCtrl',
 								titre:data[i].titre,
 								auteur:data[i].auteur,
 								type:data[i].type,
-								emprunteur:'',
+								id:i,
+								emprunteurs:[''],
 								dateRetour:'2001-01-01'});
 						}
 						$scope.listeMedias = tableau;

@@ -10,7 +10,7 @@ angular.module('adherent').config(function($routeProvider){
 		controller : 'RechercheAdherentCtrl',
 		templateUrl : 'partials/recherche_adherent.html'
 	});
-	$routeProvider.when('/visualisation_adherent', {
+	$routeProvider.when('/visualisation_adherent/:ref', {
 		controller : 'VisualisationAdherentCtrl',
 		templateUrl : 'partials/visualisation_adherent.html'
 	});

@@ -10,7 +10,7 @@ angular.module('media').config(function($routeProvider){
 		controller : 'RechercheMediaCtrl',
 		templateUrl : 'partials/recherche_media.html'
 	});
-	$routeProvider.when('/visualisation_media',{
+	$routeProvider.when('/visualisation_media/:ref',{
 		controller : 'VisualisationMediaCtrl',
 		templateUrl : 'partials/visualisation_media.html'
 	});
