@@ -20,8 +20,6 @@ angular.module('media').controller('CreationMediaCtrl',
 					//mise a niveau de oeuvre pour etre envoyé sur le serveur
 					var monOeuvreAAjouter = {
 						auteur : $scope.oeuvre.auteur,
-						emprunteurs	: Array[0] ,
-						id : 7000,
 						titre : $scope.oeuvre.titre,
 						type : $scope.oeuvre.type
 					};
