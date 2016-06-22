@@ -1,5 +1,25 @@
-<div>
-	<h2> Page de visualisation d'un adhérent</h2>
-	En théorie, on voit un adhérent. Dans les faits... ça marche pas {{adherent.nomPrenom}} du tout !
-	<span ng-bind=""></span>
-</div>
+<section ng-init="verifConnect()">
+	<div>
+
+		<h2>Page de visualisation de l'adhérent {{adherent.nomPrenom}}</h2>
+		</br> </br>
+		<div>
+			<label>ID</label>
+			<input ng-model="adherent.id" disabled="true"></input>
+		</div>
+		<div>
+			<label>Nom</label>
+			<input ng-model="adherent.nom" disabled="true"></input>
+		</div>
+		<div>
+			<label>Prénom</label>
+			<input ng-model="adherent.prenom" disabled="true"></input>
+		</div>
+		<div>
+			<label>Date de naissance</label>
+			<input ng-model="adherent.date_naissance" disabled="true"></input>
+		</div>
+		
+		<button id="Modifier" ng-click="unlockModifier()">Modifier</button>
+	</div>
+</section>

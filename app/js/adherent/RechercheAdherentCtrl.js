@@ -16,9 +16,9 @@ angular
 									for(var i = 0; i < taille; i++){
 										//splitter = data[i].date_naissance.split("T");
 										tableau.push({
-											id:i,
-											identifiant:''+data[i].id,
-											nomPrenom:data[i].nom+' '+data[i].prenom,
+											id:''+data[i].id,
+											nom:data[i].nom,
+											prenom:data[i].prenom,
 											dateNaissance:(data[i].date_naissance.split("T"))[0],//splitter[0],
 											aJourCotis:true,
 											nbMedias:0
@@ -51,7 +51,7 @@ angular
 			
 			/*MAJ variables de recherche*/
 			$scope.majVariableRecherche = function(){
-				$scope.rechercheNomPrenom = $scope.champNomPrenom;
+				$scope.rechercheNom = $scope.champNom;
 				$scope.rechercheIdentifiant = $scope.champIdentifiant;
 			}
 			
