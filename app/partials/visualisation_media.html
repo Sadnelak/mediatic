@@ -5,19 +5,19 @@
 		</br> </br>
 		<div>
 		<label>Titre</label>
-			<input ng-model="media.titre" disabled="true"></input>
+			<input ng-model="media.titre" ng-disabled="!modifierOK"></input>
 		</div>
 		<div>
 		<label>Auteur</label>
-			<input ng-model="media.auteur" disabled="true"></input>
+			<input ng-model="media.auteur" ng-disabled="!modifierOK"></input>
 		</div>
 		<div>
 		<label>Type</label>
-			<input ng-model="media.type" disabled="true"></input>
+			<input ng-model="media.type" ng-disabled="!modifierOK"></input>
 		</div>
 		
 		<button id="Modifier" ng-click="unlockModifier()">Modifier</button>
-		<button id="Sauver" ng-show="false">Sauver</button>
+		<button id="Sauver" ng-click="sauver()" ng-show="modifierOK" ng-disabled="!modifierOK">Sauver</button>
 
 	</div>
 </section>

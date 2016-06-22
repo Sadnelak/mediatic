@@ -84,7 +84,7 @@ angular.module('login').factory(
 							console.log(resultat.data);
 							return resultat.data;
 						}, function() {
-							console.error('error');
+							console.error('Erreur recherche médias');
 							console.log("result :", resultat);
 							console.log("result :", resultat.data);
 							return [];
@@ -100,7 +100,7 @@ angular.module('login').factory(
 							console.log(resultat.data) //objet à 2 variables
 							return resultat.data.items;
 						}, function() {
-							console.error('error');
+							console.error('Erreur recherche taille médias');
 							return -1;
 						});
 				return promise;
@@ -119,7 +119,7 @@ angular.module('login').factory(
 							console.log(resultat.data)
 							return resultat.data;
 						}, function() {
-							console.error('error');
+							console.error('Erreur accès fiche média');
 							return {};
 						});
 				return promise;
@@ -133,20 +133,26 @@ angular.module('login').factory(
 							console.log(resultat2);
 							return promise2;
 						}, function() {
-							console.error('error');
+							console.error('Erreur création média');
 							return promise2;
 						});
 				return promise2;
 			}
 			
-			s.postMModification = function(monMedia) {
-				var promise2 = $http.post(UrlConnection.mCreation, monMedia)
+			s.postMModification = function(ref,monMedia) {
+				var  config = {
+						params : {
+							id : ref
+						}
+						
+				};
+				var promise2 = $http.post(UrlConnection.mModification, monMedia,config)
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
 							return promise2;
 						}, function() {
-							console.error('error');
+							console.error('Erreur modification média');
 							return promise2;
 						});
 				return promise2;
@@ -172,7 +178,7 @@ angular.module('login').factory(
 							console.log(resultat.data);
 							return resultat.data;
 						}, function() {
-							console.error('error');
+							console.error('Erreur recherche adhérents');
 							console.log("result :", resultat);
 							console.log("result :", resultat.data);
 							return [];
@@ -187,7 +193,7 @@ angular.module('login').factory(
 							console.log('[getARechercheT]',resultat.data.items)
 							return resultat.data.items;
 						}, function() {
-							console.error('error');
+							console.error('Erreur recherche taille adhérents');
 							return -1;
 						});
 				return promise;
@@ -205,7 +211,7 @@ angular.module('login').factory(
 							console.log(resultat.data)
 							return resultat.data;
 						}, function() {
-							console.error('error');
+							console.error('Erreur accès adhérents');
 							return {};
 						});
 				return promise;
@@ -218,7 +224,7 @@ angular.module('login').factory(
 							console.log(resultat2);
 							return promise2;
 						}, function() {
-							console.error('error');
+							console.error('Erreur création adhérents');
 							return promise2;
 						});
 				return promise2;
@@ -231,7 +237,7 @@ angular.module('login').factory(
 							console.log(resultat2);
 							return promise2;
 						}, function() {
-							console.error('error');
+							console.error('Erreur modification adhérents');
 							return promise2;
 						});
 				return promise2;
