@@ -11,20 +11,22 @@
 	<label for="champID">Identifiant :</label>
 	<input type="text" name="champIdentifiant" ng-model="champIdentifiant" /><br>
 	<label for="champNomPrenom">Nom et pr&eacute;nom :</label>
-	<input type="text" name="champNomPrenom" ng-model="champNomPrenom" /><br>
+	<input type="text" name="champNom" ng-model="champNom" /><br>
 	<button type="button" ng-click="majVariableRecherche()">Recherche</button>
 	
 	<table>
 		<tr>
 			<th ng-click="trier('identifiant')">Identifiant</th>
-			<th ng-click="trier('nomPrenom')">Nom et pr&eacute;nom</th>
+			<th ng-click="trier('nom')">Nom</th>
+			<th ng-click="trier('prenom')">Prénom</th>
 			<th ng-click="trier('dateNaissance')">Date de naissance</th>
 			<th ng-click="trier('aJourCotis')">&Agrave; jour cotisation</th> 
 			<th ng-click="trier('nbMedias')">Nb m&eacute;dias en possession</th>
 		</tr> 
-		<tr ng-repeat="adherent in listeAdherents | filter:{nomPrenom:rechercheNomPrenom} | startsWith:rechercheIdentifiant">
+		<tr ng-repeat="adherent in listeAdherents | filter:{nom:rechercheNom} | startsWith:rechercheIdentifiant">
 			<td ng-bind="adherent.identifiant"></td>
-			<td><a href="#/visualisation_adherent/{{adherent.id}}"><span ng-bind="adherent.nomPrenom"></span></a></td>
+			<td><a ng-href="#/visualisation_adherent/{{adherent.id}}">{{adherent.nom}}</a></td>
+			<td ng-bind="adherent.prenom"></td>
 			<td ng-bind="adherent.dateNaissance"></td>
 			<td ng-bind="chaineAJourCotis(adherent)" ng-class="{retard: !adherent.aJourCotis }"></td> <!--" -->
 			<td ng-bind="adherent.nbMedias"></td>

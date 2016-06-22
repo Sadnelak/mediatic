@@ -197,8 +197,13 @@ angular.module('login').factory(
 
 			};
 			
-			s.getAAccession = function() {
-				var promise = $http.get(UrlConnection.aAccession).then(
+			s.getAAccession = function(ref) {
+				var  config = {
+						params : {
+							id : ref
+						}	
+				};
+				var promise = $http.get(UrlConnection.aAccession,config).then(
 						function(resultat) {
 							console.log(resultat.data)
 							return resultat.data;
@@ -207,7 +212,6 @@ angular.module('login').factory(
 							return {};
 						});
 				return promise;
-
 			};
 			
 			s.postACreation = function(monAdherent) {
