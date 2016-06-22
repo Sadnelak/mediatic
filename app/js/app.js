@@ -1,4 +1,4 @@
-angular.module('mediatic', ['ngRoute', 'login', 'adherent', 'media']);
+angular.module('mediatic', ['ngRoute', 'login', 'adherent', 'media', 'emprunt']);
 
 angular
 	.module('mediatic')

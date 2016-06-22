@@ -54,12 +54,15 @@ angular.module('login').factory(
 			AuthService.connect = function(login, password){
 				return RequeteLogin.postCLogin({login : login, mdp: password}).then(function(response){
 					if(response){
+						//je suis authentifier
+						console.log("SConnection : 57 ",response);
 						var crypt = 'Basic ' +btoa(login+':'+password);
 						connect = true;
 						$http.defaults.headers.common['Authorization']=crypt;
-						
+						return true;
 					}
-				return true;
+					//je ne suis pas authentifier
+					return false;
 				});
 			};
 			AuthService.disconnect = function(){
@@ -131,10 +134,12 @@ angular.module('login').factory(
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return promise2;
+							return true;
 						}, function() {
+
 							console.error('Erreur création média');
-							return promise2;
+							return false;
+
 						});
 				return promise2;
 			}
@@ -222,10 +227,12 @@ angular.module('login').factory(
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return promise2;
+							return true;
 						}, function() {
+
 							console.error('Erreur création adhérents');
-							return promise2;
+							return false;
+
 						});
 				return promise2;
 			}

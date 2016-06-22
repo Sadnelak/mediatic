@@ -2,30 +2,54 @@
 
 angular
 .module('adherent')
-.controller('CreationAdherentCtrl', function($scope,$location,ServiceAuth){
+.controller('CreationAdherentCtrl', function($scope,$location,ServiceAuth,RequeteAdherent){
 
 
-			$scope.adherent={};
-			$scope.adherent.cotisation={};
+			$scope.adherent={
+				adresse:{
+					ligne1:'',
+					ligne2:'',
+					codepostal:'',
+					ville:''
+				},
+				cotisation:{
+					debut:'',
+					fin:'',
+					cotisation:0
+				},
+				emprunt : [],
+				nombre_media:0
+			};
+			
 
 			$scope.ajoutAdherent = function(){
 				console.log($scope.adherent);
-				var champsARemplir = undefined;
+				var champsARemplir = '';
 				if ($scope.adherent.nom===undefined || $scope.adherent.nom==='') {
-					champsARemplir=champsARemplir+"le nom, "
+					champsARemplir=champsARemplir+"le nom, ";
 				}
 				if ($scope.adherent.prenom===undefined || $scope.adherent.prenom==='') {
-					champsARemplir=champsARemplir+"le prenom, "
+					champsARemplir=champsARemplir+"le prenom, ";
 				}
 				if ($scope.adherent.date_naissance===undefined || $scope.adherent.date_naissance==='') {
-					champsARemplir=champsARemplir+"la date de naissance, "
+					champsARemplir=champsARemplir+"la date de naissance, ";
 				}
 				if ($scope.adherent.email===undefined || $scope.adherent.email==='') {
-					champsARemplir=champsARemplir+"l'email, "
+					champsARemplir=champsARemplir+"l'email, ";
 				}
 
+				if (champsARemplir===''){
 
-
+					RequeteAdherent.postACreation($scope.adherent).then(function(result){
+						alert("Adhérent créé avec succès.");
+						console.log("Adhérent créé avec succès : ",result);
+					},function(resultat){
+						alert("Échec lors de la création de l'adhérent");
+						console.log("Échec lors de la création de l'adhérent :",resultat);
+					});
+				}else{
+					alert("Il faut remplir "+champsARemplir);
+				}
 			};
 			
 
@@ -38,11 +62,11 @@ angular
 
 						var dateNaissance = new Date($scope.adherent.dateNaissance.annee,$scope.adherent.dateNaissance.mois-1,$scope.adherent.dateNaissance.jour);
 
-						var age = ((new Date().getTime() - dateNaissance.getTime()) / 31536000000).toFixed(0);
+						var age = parseInt(((new Date().getTime() - dateNaissance.getTime()) / 31536000000).toFixed(0));
 
 						$scope.adherent.date_naissance=dateNaissance;
 						console.log(age);
-						$scope.adherent.age=age;
+						$scope.adherent.age=age.toString();
 
 
 					}
@@ -63,8 +87,8 @@ angular
 
 						var finAbonnement = new Date($scope.adherent.dateCotisation.annee +1,$scope.adherent.dateCotisation.mois-1,$scope.adherent.dateCotisation.jour);
 
-						$scope.adherent.cotisation.debut=dateCotisation;
-						$scope.adherent.cotisation.fin=finAbonnement;
+						$scope.adherent.cotisation.debut=dateCotisation.toString();
+						$scope.adherent.cotisation.fin=finAbonnement.toString();
 
 						console.log(finAbonnement);
 						$scope.adherent.dateFinAbonnement=finAbonnement.getDate() +"-"+(finAbonnement.getMonth()+1) +"-"+finAbonnement.getFullYear();
