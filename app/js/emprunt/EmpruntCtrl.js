@@ -1,66 +1,86 @@
-angular.module('emprunt').controller('EmpruntCtrl', 
+angular.module('emprunt').controller('EmpruntCtrl',
 	['$scope',
 	 '$window',
 	 '$location',
+	 '$http',
 	 'TriService',
 	 'RequeteMedia',
 	 'RequeteAdherent',
-	 function($scope, $window, $location, TriService, RequeteMedia, RequeteAdherent){
-		console.log("identifié : ", $scope.isConnected)
-		if($scope.isConnected){
-		$scope.listeMedias = [];
+	 'RequeteEmprunt',
+	 
+	 function($scope, $window, $location, $http, TriService, RequeteMedia, RequeteAdherent, RequeteEmprunt  ){
 		
-		var taille = 0;
-		if($scope.isConnected){
-			console.log('Avant toute requête, taille = '+taille);
-			
-			RequeteMedia.getMRechercheT().then(
-				function(taille){
-					RequeteMedia.getMRecherche().then(
-						function(data){
-							var tableau = [];
-							for(var i = 0; i < taille; i++){
-								//console.log(data[i].titre+" "+data[i].auteur+" "+data[i].type);
-								tableau.push({
-									titre:data[i].titre,
-									auteur:data[i].auteur,
-									type:data[i].type,
-									id:i,
-									emprunteurs:[''],
-									dateRetour:'2001-01-01'});
-							}
-							$scope.listeMedias = tableau;
-						},function(reason){
-							console.log('Echec insertion données !');
-						})
-				},function(reason){
-					console.log('Taille indisponible !');
+		$scope.emprunt = {};
+		
+		$scope.valideEmprunt = function(){
+			if($scope.emprunt.id_media != undefined && $scope.emprunt.id_adherent != undefined){
+				console.log($scope.emprunt.id_media, $scope.emprunt.id_adherent);
+
+				console.log($scope.getMRechercheT);
+				
+				RequeteEmprunt.getEAjout($scope.emprunt).then(function(result){
+						console.log("result :", result);
+						console.log("result.data :", result.data);
+					});
+				
+			}else{
+				console.log("oublie de cochage");
+			}
+		}
+		
+		$scope.calculFinAbonnement = function(){
+			if ($scope.emprunt != undefined && $scope.emprunt.dateEmprunt!= undefined){
+
+				$scope.verif($scope.emprunt.dateEmprunt);
+
+				if ($scope.emprunt.dateEmprunt.annee!=undefined && $scope.emprunt.dateEmprunt.mois!=undefined && $scope.emprunt.dateEmprunt.jour!=undefined){
+
+					var dateEmprunt = new Date($scope.emprunt.dateEmprunt.annee,$scope.emprunt.dateEmprunt.mois-1,$scope.emprunt.dateEmprunt.jour);
+					
+					var dureePret{};
+					dureePret.livre = 30;
+					dureePret.cd = 15;
+					dureePret.dvd = 15;
+					if()
+					var dateEmpruntRetour = new Date($scope.emprunt.dateEmprunt.annee +1,$scope.emprunt.dateEmprunt.mois-1,$scope.emprunt.dateEmprunt.jour);
+
+					$scope.emprunt.cotisation.debut=dateEmprunt.toString();
+					$scope.emprunt.cotisation.fin=finAbonnement.toString();
+
+					console.log(finAbonnement);
+					$scope.emprunt.dateFinAbonnement=finAbonnement.getDate() +"-"+(finAbonnement.getMonth()+1) +"-"+finAbonnement.getFullYear();
+
+
 				}
-			);
-		}
-		
+			}
+
+		};
+
+
+		$scope.verif = function (date){
+			date.jour=parseInt(date.jour);
+			date.mois=parseInt(date.mois);
+			date.annee=parseInt(date.annee);
+			console.log(date);
 			
-		/*Tri*/
-		$scope.cleStockee='';
-		$scope.trier = function(cle){
-			TriService.trier(cle,$scope,$scope.listeMedias);
-		}
-			
-		/*MAJ variables de recherche*/
-		$scope.majVariableRecherche = function(){
-			$scope.rechercheAuteur = $scope.champAuteur;
-			$scope.rechercheTitre = $scope.champTitre;
-			$scope.rechercheType = $scope.selectType;
-		}
+			if (date.jour<0 || date.jour >31 || typeof(date.jour)!="number" || !Number.isInteger(date.jour)) {
+				console.log(date);	
+				date.jour=undefined;
+			}else{console.log("ok");}
+
+
+			if (date.mois<0 || date.mois >12 || typeof(date.mois)!="number" || !Number.isInteger(date.mois)) {
+				console.log(date);
+				date.mois=undefined;
+			}else{console.log("ok");}
+
+
+			if (typeof(date.annee)!="number" || !Number.isInteger(date.annee)) {
+				console.log(date);
+				date.annee=undefined;
+			}else{console.log("ok");}
+
+		};
 		
-		/*Tentative d'accéder à l'ajout*/
-		$scope.droits = true;
-		$scope.tenterAccesCreation = function(){
-			if($scope.droits)
-				$location.path('/creation_media');
-			else
-				console.log('Vous n\'avez pas les droits pour ajouter un nouveau média.');
-		}
-		
-		}
+	
 	}]);
