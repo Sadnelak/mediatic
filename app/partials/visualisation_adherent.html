@@ -5,21 +5,22 @@
 		</br> </br>
 		<div>
 			<label>ID</label>
-			<input ng-model="adherent.id" disabled="true"></input>
+			<input ng-model="adherent.id" ng-disabled="true"></input>
 		</div>
 		<div>
 			<label>Nom</label>
-			<input ng-model="adherent.nom" disabled="true"></input>
+			<input ng-model="adherent.nom" ng-disabled="!modifierOK"></input>
 		</div>
 		<div>
 			<label>Prénom</label>
-			<input ng-model="adherent.prenom" disabled="true"></input>
+			<input ng-model="adherent.prenom" ng-disabled="!modifierOK"></input>
 		</div>
 		<div>
 			<label>Date de naissance</label>
-			<input ng-model="adherent.date_naissance" disabled="true"></input>
+			<input ng-model="adherent.dateNaissance" ng-disabled="!modifierOK"></input>
 		</div>
 		
 		<button id="Modifier" ng-click="unlockModifier()">Modifier</button>
+		<button id="Sauver" ng-click="sauver()" ng-show="modifierOK" ng-disabled="!modifierOK">Sauver</button>
 	</div>
 </section>
