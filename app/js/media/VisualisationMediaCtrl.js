@@ -37,7 +37,7 @@ angular.module('media').controller('VisualisationMediaCtrl',
 				
 				if(evalOeuvre){
 					console.log("good : ",$scope.media);
-					RequeteMedia.postMModification().then(function(result){
+					RequeteMedia.postMModification($scope.media).then(function(result){
 						console.log("Super, c'est réussi !");
 						console.log("result :", result);
 						console.log("result.data :", result.data);

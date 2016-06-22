@@ -144,25 +144,22 @@ angular.module('login').factory(
 				return promise2;
 			}
 			
-			s.postMModification = function(ref,monMedia) {
-				var  config = {
-						params : {
-							id : ref
-						}
-						
-				};
-				var promise2 = $http.post(UrlConnection.mModification, monMedia,config)
+			s.postMModification = function(monMedia) {
+				var promise2 = $http.post(UrlConnection.mModification, monMedia)
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return promise2;
+							return true;
 						}, function() {
 							console.error('Erreur modification média');
-							return promise2;
+							return false;
 						});
 				return promise2;
 			}
 	
+			
+			
+			
 			
 			return s;
 		});
@@ -238,14 +235,14 @@ angular.module('login').factory(
 			}
 			
 			s.postAModification = function(monAdherent) {
-				var promise2 = $http.post(UrlConnection.aCreation, monAdherent)
+				var promise2 = $http.post(UrlConnection.aModification, monAdherent)
 						.then(function(resultat2) {
 							console.log(resultat2.data);
 							console.log(resultat2);
-							return promise2;
+							return true;
 						}, function() {
 							console.error('Erreur modification adhérents');
-							return promise2;
+							return false;
 						});
 				return promise2;
 			}

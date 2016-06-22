@@ -6,8 +6,10 @@
 		 '$routeParams',
 		 'RequeteAdherent',
 		 function($scope, $routeParams, RequeteAdherent){
+			
 			if($scope.isConnected){
 				$scope.modifierOK = false;
+				
 				RequeteAdherent.getAAccession($routeParams.ref).then(
 					function(resultat){
 						$scope.adherent = resultat;
@@ -34,6 +36,31 @@
 					
 				}
 			}
+			
+			$scope.sauver = function(){
+				var adherentDateNaissance =!(($scope.adherent.date_naissance===undefined)||($scope.adherent.date_naissance==='') ) ;
+				var adherentNom =!(($scope.adherent.nom===undefined)||($scope.adherent.nom==='') ) ;
+				var adherentPrenom =!(($scope.adherent.prenom===undefined)||($scope.adherent.prenom==='') ) ;
+				var evalAdherent = (adherentDateNaissance && adherentNom && adherentPrenom);
+				
+				if(evalAdherent){
+					console.log("good : ",$scope.adherent);
+					RequeteAdherent.postAModification($scope.adherent).then(function(result){
+						console.log("Super, c'est réussi !");
+						console.log("result :", result);
+						console.log("result.data :", result.data);
+					},function(result){console.log("Aïe aïe aïe, c'est raté !")}
+				);
+				}else{
+					console.log("Evaluation incorrecte !");
+				}
+			}
+			
+			
+			
 		}]);
 
+
+	
+	
 	})();

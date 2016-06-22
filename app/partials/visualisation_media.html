@@ -3,6 +3,12 @@
 
 		<h2>Page de visualisation de {{media.titre}}</h2>
 		</br> </br>
+		
+		<div>
+		<label>ID</label>
+			<input ng-model="media.id" ng-disabled="true"></input>
+		</div>
+		<div>
 		<div>
 		<label>Titre</label>
 			<input ng-model="media.titre" ng-disabled="!modifierOK"></input>
