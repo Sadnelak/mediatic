@@ -1,23 +1,40 @@
 <section ng-init="verifConnect()">
 	<h2> Page de création de nouveaux emprunts</h2>
 
-	<label for="champTitre">Titre :</label>
-	<input type="text" name="champTitre" ng-model="champTitre" /><br>
-	<label for="champAuteur">Auteur :</label>
-	<input type="text" name="champAuteur" ng-model="champAuteur" /><br>
-	<label for="selectType"> Type de média </label>
-
-	<select name="multipleSelect" ng-model="selectType">
-	  <option value="">-</option>
-	  <option value="livre">Livre</option>
-	  <option value="cd">CD</option>
-	  <option value="dvd">DVD</option>
-	</select><br>
-
 	
-	
+
+	<pre>{{emprunt|json}}</pre>
+	<p>Cocher le bouton de l'oeuvre ainsi que celui de l'emprunteur, puis 
+	<button type="button" ng-click="valideEmprunt($scope.emprunt.id_media, $scope.emprunt.id_adherent)">Emprunter</button>
+	<div>
+		<label>Date de l'emprunt (format JJ-MM-AAAA)</label>
+		</br>
+		<input type="text" ng-model="emprunt.dateEmprunt.jour" placeholder="JJ" ng-blur="calculRetour()">
+		<label>-</label>
+		<input type="text" ng-model="emprunt.dateEmprunt.mois" placeholder="MM" ng-blur="calculRetour()">
+		<label>-</label>
+		<input type="text" ng-model="emprunt.dateEmprunt.annee" placeholder="AAAA" ng-blur="calculRetour()">
+		</br>
+		<label>Retour</label>
+		<input type="text" ng-model="emprunt.retour" disabled="true">
+
+	</div>
+	</p>
 	<div class="row">
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-6" ng-controller="RechercheMediaCtrl">
+		
+			<label for="champTitre">Titre :</label>
+			<input type="text" name="champTitre" ng-model="champTitre" /><br>
+			<label for="champAuteur">Auteur :</label>
+			<input type="text" name="champAuteur" ng-model="champAuteur" /><br>
+			<label for="selectType"> Type de média </label>
+		
+			<select name="multipleSelect" ng-model="selectType">
+			  <option value="">-</option>
+			  <option value="livre">Livre</option>
+			  <option value="cd">CD</option>
+			  <option value="dvd">DVD</option>
+			</select><br>
 			<button type="button" ng-click="majVariableRecherche()">Recherche</button>
 			<table>
 
@@ -28,7 +45,7 @@
 					<th ng-click="trier('auteur')">Auteur</th>
 					<th ng-click="trier('emprunteurs')">Emprunteur</th> 
 					<th ng-click="trier('dateRetour')">Date de retour</th>
-					<th >Cocher pour emprunter</th>
+					<th ></th>
 				</tr> 
 				
 				<tr ng-repeat="media in listeMedias | filter:{auteur:rechercheAuteur} | filter:{type:rechercheType} | filter:{titre:rechercheTitre}">
@@ -38,18 +55,24 @@
 						<td ng-bind="media.auteur"></td>
 						<td ng-bind="media.emprunteur"></td>
 						<td ng-bind="media.dateRetour"></td>
-						<td> <input type="checkbox" name="checkbox_media" value="{{media.id}}" ></td>
+						<td> <input type="radio" name="checkbox_media" value="{{media.id}}" ng-model="emprunt.id_media"></td>
 					
 				</tr>
 			</table>
 		</div>
 		
-		<div class="col-xs-12 col-md-6">
-		
+		<div class="col-xs-12 col-md-6" ng-controller="RechercheAdherentCtrl">
+			
+			<label for="champID">Identifiant :</label>
+			<input type="text" name="champIdentifiant" ng-model="champIdentifiant" /><br>
+			<label for="champNomPrenom">Nom et pr&eacute;nom :</label>
+			<input type="text" name="champNom" ng-model="champNom" /><br>
+			
 			<button type="button" ng-click="majVariableRecherche()">Recherche</button>
 			
 			<table>
 				<tr>
+					<th ></th>
 					<th ng-click="trier('identifiant')">Identifiant</th>
 					<th ng-click="trier('nom')">Nom</th>
 					<th ng-click="trier('prenom')">Prénom</th>
@@ -58,7 +81,7 @@
 					<th ng-click="trier('nbMedias')">Nb m&eacute;dias en possession</th>
 				</tr> 
 				<tr ng-repeat="adherent in listeAdherents | filter:{nom:rechercheNom} | startsWith:rechercheIdentifiant">
-					<td> <input type="checkbox" name="checkbox_adherents" value="{{adherent.id}}" ></td>
+					<td> <input type="radio" name="checkbox_adherents" value="{{adherent.id}}" ng-model="emprunt.id_adherent"></td>
 					<td ng-bind="adherent.identifiant"></td>
 					<td><a ng-href="#/visualisation_adherent/{{adherent.id}}">{{adherent.nom}}</a></td>
 					<td ng-bind="adherent.prenom"></td>

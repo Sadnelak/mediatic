@@ -251,4 +251,25 @@ angular.module('login').factory(
 			return s;
 		});
 
+angular.module('login').factory(
+		'RequeteEmprunt',
+		function($http, $routeParams, UrlConnection) {
+
+			var s = {};
+			
+			s.getEAjout = function(monEmprunt) {
+				var promise2 = $http.post(UrlConnection.eAjout, monEmprunt)
+						.then(function(resultat2) {
+							console.log(resultat2.data);
+							console.log(resultat2);
+							return true;
+						}, function() {
+							console.error('error');
+							return false;
+						});
+				return promise2;
+			}
+			return s;
+		});
+
 
