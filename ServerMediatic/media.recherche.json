@@ -1,0 +1,232 @@
+[{"id":1,
+"titre":"Lanfeust de Troy",
+"auteur":"Arleston - Tarquin",
+"type":"Livre",
+"emprunteur":{
+	"id":2,
+	"nom" : "Nicolède",
+	"prenom" : "Cian"
+},
+"emprunteurs":[{
+	"adherent" : {
+		"id" : 2,
+		"nom" : "Nicolède",
+		"prenom" : "Cian"
+	},
+	"depart":"2015-02-10T00:00:00.000Z",
+	"retour":"2015-03-08T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 3,
+		"nom" : "Nicolède",
+		"prenom" : "Cixi"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 4,
+		"nom" : "Le troll",
+		"prenom" : "Hébus"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+}],
+"retour":"2016-03-28T00:00:00.000Z"
+},{"id":2,
+"titre":"Lanfeust des étoiles",
+"auteur":"Arleston - Tarquin",
+"type":"Livre",
+"emprunteur":null,
+"emprunteurs":[{
+	"adherent" : {
+		"id" : 3,
+		"nom" : "Nicolède",
+		"prenom" : "Cixi"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 4,
+		"nom" : "Le troll",
+		"prenom" : "Hébus"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+}],
+"retour":null
+},{"id":3,
+"titre":"Trolls de Troy",
+"auteur":"Arleston - Mourier",
+"type":"Livre",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":4,
+"titre":"Thorgal",
+"auteur":"G. Rosinski - J. Van Hamme",
+"type":"Livre",
+"emprunteur":null,
+"retour":null
+},{"id":5,
+"titre":"Thorgal",
+"auteur":"Eric Mouquet",
+"type":"CD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":6,
+"titre":"Star Wars - épisodes IV",
+"auteur":"Georges Lucas",
+"type":"DVD",
+"emprunteur":null,
+"retour":null
+},{"id":7,
+"titre":"Star Wars - épisodes V",
+"auteur":"Georges Lucas",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":8,
+"titre":"Star Wars - épisodes VI",
+"auteur":"Georges Lucas",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":9,
+"titre":"La petite maison dans la prairie",
+"auteur":"Laura Ingalss Wilder",
+"type":"Livre",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":10,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":11,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":12,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":13,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":14,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":15,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":16,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":17,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":18,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":19,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":20,
+"titre":"La petite maison dans la prairie",
+"auteur":"Michael Landon",
+"type":"DVD",
+"emprunteur":null,
+"emprunteurs":[],
+"retour":null
+},{"id":21,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":22,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":23,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":24,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":25,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":26,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":27,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":28,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":29,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":30,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":31,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":32,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":33,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":34,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":35,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":36,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":37,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":38,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":39,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":40,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":41,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":42,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":43,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":44,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":45,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":46,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":47,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":48,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":49,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":50,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":51,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":52,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":53,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":54,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":55,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":56,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":57,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":58,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":59,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":60,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":61,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":62,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":63,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":64,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":65,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":66,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":67,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":68,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+},{"id":69,"titre":"La petite maison dans la prairie","auteur":"Michael Landon","type":"DVD","emprunteur":null,"emprunteurs":[],"retour":null
+}]

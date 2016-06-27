@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 
-var basique = "http://192.168.10.12:8090";
+var basique = "http://192.168.10.19:8090";
 
 angular
 	.module('login')

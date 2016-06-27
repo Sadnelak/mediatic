@@ -1,0 +1,13 @@
+{
+"adherent":{
+	"id":1,
+	"nom" : "Nicolède",
+	"prenom" : "Maitre"
+},
+"media":{
+	"id":2,
+	"titre":"Lanfeust des étoiles (emprunté)"
+},
+"depart":"2015-01-01T00:00:00.000Z",
+"retour":"2015-01-15T00:00:00.000Z"
+}

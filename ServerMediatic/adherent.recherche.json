@@ -1,0 +1,186 @@
+[{"id":1,
+"nom":"Nicolède",
+"prenom":"Maitre",
+"date_naissance":"1902-02-28T00:00:00.000Z",
+"cotisation_correcte":true,
+"email":"cixi@troy.com",
+"adresse":{
+	"ligne1":"3eme maison",
+	"ligne2":"chambre de Cixi",
+	"codepostal":"3-333",
+	"ville":"Eckmul"
+},
+"cotisation":{
+	"debut":"2016-01-01T00:00:00.000Z",
+	"fin":"2017-01-01T00:00:00.000Z",
+	"montant":2
+},
+"age": 17,
+"emprunt":[{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-01-17T00:00:00.000Z",
+	"retour":"2014-02-01T00:00:00.000Z"
+},{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2015-02-10T00:00:00.000Z",
+	"retour":"2015-03-08T00:00:00.000Z"
+}],
+"nombre_media":1
+},{"id":2,
+"nom":"Nicolède",
+"prenom":"Cian",
+"date_naissance":"1995-06-15T00:00:00.000Z",
+"cotisation_correcte":true,
+"email":"cian@troy.com",
+"adresse":{
+	"ligne1":"3eme maison",
+	"ligne2":"chambre de Cian",
+	"codepostal":"3-333",
+	"ville":"Eckmul"
+},
+"cotisation":{
+	"debut":"2016-01-01T00:00:00.000Z",
+	"fin":"2017-01-01T00:00:00.000Z",
+	"montant": 20
+},
+"age": 17,
+"emprunt":[{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-01-17T00:00:00.000Z",
+	"retour":"2014-02-01T00:00:00.000Z"
+}],
+"nombre_media":2
+},{"id":3,
+"nom":"Nicolède",
+"prenom":"Cixi",
+"date_naissance":"1998-07-12T21:00:00.000Z",
+"cotisation_correcte":true,
+"email":"cixi@troy.com",
+"adresse":{
+	"ligne1":"3eme maison",
+	"ligne2":"chambre de Cixi",
+	"codepostal":"3-333",
+	"ville":"Eckmul"
+},
+"cotisation":{
+	"debut":"2016-01-01T00:00:00.000Z",
+	"fin":"2017-01-01T00:00:00.000Z",
+	"montant":2
+},
+"age": 17,
+"emprunt":[{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-01-17T00:00:00.000Z",
+	"retour":"2014-02-01T00:00:00.000Z"
+},{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-02-20T00:00:00.000Z",
+	"retour":"2014-03-08T00:00:00.000Z"
+}],
+"nombre_media":0
+},{"id":4,
+"nom":"Le troll",
+"prenom":"Hébus",
+"date_naissance":null,
+"cotisation_correcte":true,
+"nombre_media":0,
+"cotisation":{
+	"debut":"2017-01-01T00:00:00.000Z",
+	"fin":"2018-01-01T00:00:00.000Z",
+	"montant":2
+}
+},{"id":5,
+"nom":"Or Azur",
+"prenom":"Chevalier",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":6,
+"nom":"Stagiaire",
+"prenom":"Guillaume",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":7,
+"nom":"Stagiaire",
+"prenom":"Ahmed",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":8,
+"nom":"Stagiaire",
+"prenom":"Justin",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":9,
+"nom":"Stagiaire",
+"prenom":"Paul-Henry",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":10,
+"nom":"Stagiaire",
+"prenom":"Alexis",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":11,
+"nom":"Stagiaire",
+"prenom":"Thomas",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":12,
+"nom":"Stagiaire",
+"prenom":"Hugo",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":13,
+"nom":"Stagiaire",
+"prenom":"Adrien",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":14,
+"nom":"Stagiaire",
+"prenom":"Salim",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":15,
+"nom":"Stagiaire",
+"prenom":"Cécile",
+"date_naissance":"1993-11-01T00:00:00.000Z",
+"cotisation_correcte":false,
+"nombre_media":0
+},{"id":16,"nom":"Stagiaire","prenom":"Mickaël","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":17,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":18,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":19,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":21,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":22,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":23,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":24,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":25,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":26,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":27,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":28,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+},{"id":29,"nom":"Someone","prenom":"Quelqu'un","date_naissance":"1993-11-01T00:00:00.000Z","cotisation_correcte":false,"nombre_media":0
+}]

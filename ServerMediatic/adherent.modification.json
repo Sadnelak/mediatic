@@ -1,0 +1,32 @@
+{"id":3,
+"nom":"Nicolède Updated",
+"prenom":"Cixi",
+"date_naissance":"1998-07-12T21:00:00.000Z",
+"email":"cixi@troy.com",
+"adresse":{
+	"ligne1":"3eme maison",
+	"ligne2":"chambre de Cixi",
+	"codepostal":"3-333",
+	"ville":"Eckmul"
+},
+"cotisation":{
+	"debut":"2016-01-01T00:00:00.000Z",
+	"fin":"2017-01-01T00:00:00:.000Z",
+	"montant":2
+},
+"age": 17,
+"emprunt":[{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-01-17T00:00:00.000Z",
+	"retour":"2014-02-01T00:00:00.000Z"
+},{
+	"media":{
+		"id":2,
+		"titre":"Lanfeust des étoiles"
+	},
+	"depart":"2014-02-20T00:00:00.000Z",
+	"retour":"2014-03-08T00:00:00.000Z"
+}]}

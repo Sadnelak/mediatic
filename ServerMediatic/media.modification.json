@@ -1,0 +1,38 @@
+{"id":10,
+"titre":"La petite maison dans la grande prairie UPDATED",
+"auteur":"Laura Ingalss Wilder",
+"type":"Livre",
+"emprunteurs":[{
+	"adherent" : {
+		"id" : 1,
+		"nom" : "Nicolède",
+		"prenom" : "Maitre"
+	},
+	"depart":"2015-01-01T00:00:00.000Z",
+	"retour":"2015-01-15T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 2,
+		"nom" : "Nicolède",
+		"prenom" : "Cian"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 3,
+		"nom" : "Nicolède",
+		"prenom" : "Cixi"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+},{
+	"adherent" : {
+		"id" : 4,
+		"nom" : "Le troll",
+		"prenom" : "Hébus"
+	},
+	"depart":"2015-01-17T00:00:00.000Z",
+	"retour":"2015-02-01T00:00:00.000Z"
+}]
+}

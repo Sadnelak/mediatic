@@ -6,8 +6,8 @@ angular
 		
 		TriService.triCle = function(cle,desc){
 			return function(a,b){
-				return desc ? ~~(a[cle] < b[cle]):
-							 ~~(a[cle] > b[cle]);
+				return desc ? ~~(a[cle].localeCompare(b[cle])):
+							 ~~(b[cle].localeCompare(a[cle]));
 			};
 		}
 
@@ -16,7 +16,6 @@ angular
 				console.log('Tri selon',cle,',décroissant');
 				tableau.sort(this.triCle(cle,true));
 				$scope.cleStockee = '';
-				return;
 			}
 			else{
 				console.log('Tri selon',cle,',croissant');

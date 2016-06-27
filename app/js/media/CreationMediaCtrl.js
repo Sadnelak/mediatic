@@ -41,14 +41,3 @@ angular.module('media').controller('CreationMediaCtrl',
 	}]);
 		
 
-
-//angular
-//	.module('mediatic')
-//	.directive('maDirective', function() {
-//		return function(scope, elm, attrs, ctrl) {
-//			ctrl.$validator.monValidateur = function(valeur){
-//				...
-//				return true/false;
-//			}
-//		};
-//	})
